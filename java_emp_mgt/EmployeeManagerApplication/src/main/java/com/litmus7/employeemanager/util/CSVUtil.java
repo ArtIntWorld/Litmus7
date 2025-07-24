@@ -1,12 +1,14 @@
+package com.litmus7.employeemanager.util;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadCSV {
-
-    public List<String[]> readCSV(String filename) {
+public class CSVUtil {
+	
+	public List<String[]> readCSV(String filename) {
         String line;
         List<String[]> data = new ArrayList<>();
 
