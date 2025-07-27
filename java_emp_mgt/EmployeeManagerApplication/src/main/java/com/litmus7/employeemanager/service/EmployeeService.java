@@ -34,10 +34,15 @@ public class EmployeeService {
             	validEmployeeData.add(data);
             }
 		}
-		
         return new EmployeeValidDTO(validEmployeeData);
 	}
+	
+	public List<EmployeeDTO> exportEmployeeDetails(){
+		EmployeeDAO allEmployeeSelect = new EmployeeDAO();
+		List<EmployeeDTO> allEmployeeList = allEmployeeSelect.selectAllEmployee();
 		
+		return allEmployeeList;
+	}
 	
 	public List<EmployeeDTO> convertToEmployeeObject(List<String[]> csvdata) {
 		List<EmployeeDTO> employeeList = new ArrayList<>();

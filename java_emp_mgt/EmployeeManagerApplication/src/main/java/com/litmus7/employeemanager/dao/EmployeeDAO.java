@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.litmus7.employeemanager.constant.SQLConstants;
@@ -31,6 +32,37 @@ public class EmployeeDAO {
 			System.out.println(e.getMessage());
 		}
 		return status;
+	}
+	
+	public List<EmployeeDTO> selectAllEmployee() {
+		
+		List<EmployeeDTO> allEmployees = new ArrayList<>();
+		
+		try(Connection conn = DatabaseConnectionUtil.getConnection();
+				PreparedStatement ps = conn.prepareStatement(SQLConstants.ALL_EMPLOYEE_SELECT)){
+			
+			try(ResultSet rs = ps.executeQuery()){
+				
+				while(rs.next()) {
+					EmployeeDTO employee = new EmployeeDTO();
+					employee.setID(rs.getInt("emp_id"));
+					employee.setFirstName(rs.getString("first_name"));
+					employee.setLastName(rs.getString("last_name"));
+					employee.setEmail(rs.getString("email"));
+					employee.setPhone(rs.getString("phone"));
+					employee.setDepartment(rs.getString("department"));
+					employee.setSalary(rs.getDouble("salary"));
+					employee.setJoinDate(rs.getDate("join_date"));
+					
+					allEmployees.add(employee);
+				}
+			}
+			
+		} catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return allEmployees;
 		
 	}
 	

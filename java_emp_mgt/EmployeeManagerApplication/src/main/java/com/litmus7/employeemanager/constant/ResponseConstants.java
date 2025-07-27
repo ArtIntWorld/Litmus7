@@ -1,17 +1,18 @@
 package com.litmus7.employeemanager.constant;
 
 public class ResponseConstants {
-	public static final int SUCCESS = 0;
-    public static final int FILE_NOT_FOUND = 1001;
-    public static final int INVALID_CSV_FORMAT = 1002;
-    public static final int IO_ERROR = 1003;
-    public static final int VALIDATION_FAILED = 1004;
-    public static final int DATABASE_ERROR = 1005;
     
-    public static final String CSV_ERROR = "CSV file type is invalid or empty";
-    public static final String PARTIAL_VALIDATION_ERROR = "Partial import due to validation problems.";
-    public static final String FULL_VALIDATION_ERROR = "No import due to validation problems.";
-    public static final String SUCCESS_MSG = "Successfully loaded the employee data to database.";
-    public static final String FILE_NOT_FOUND_MSG = "File is empty or not found.";
-    public static final String INVALID_CSV_FORMAT_MSG ="File not of CSV Type.";
+    public static final int OK = 200;
+    public static final int BAD_REQUEST = 400;
+    public static final int PARTIAL_VALID_ERROR = 206;
+    public static final int FULL_VALID_ERROR = 422;
+    
+    public static final String EXPORT_SUCCESS_MESSSAGE = "Employee data exported successfully.";
+    public static final String IMPORT_SUCCESS_MESSAGE = "Employees imported successfully.";
+    public static final String INVALID_CSV_MESSAGE = "Invalid CSV format or unsupported file.";
+    public static final String EMPTY_CSV_MESSAGE = "The uploaded CSV file is empty.";
+    public static final String PARTIAL_VALID_ERROR_MESSAGE = "Some rows failed validation.";
+    public static final String FULL_VALID_ERROR_MESSAGE = "All rows failed validation.";
+    public static final String EMPTY_EMPLOYEE_MESSAGE = "No employee data provided.";
+    
 }
