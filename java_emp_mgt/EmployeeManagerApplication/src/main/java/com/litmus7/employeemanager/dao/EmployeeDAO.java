@@ -3,6 +3,7 @@ package com.litmus7.employeemanager.dao;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -11,6 +12,27 @@ import com.litmus7.employeemanager.dto.EmployeeDTO;
 import com.litmus7.employeemanager.util.DatabaseConnectionUtil;
 
 public class EmployeeDAO {
+	
+	public boolean checkEmployeeByID(int id) {
+
+		boolean status = false;
+		
+		try(Connection conn = DatabaseConnectionUtil.getConnection();
+				PreparedStatement ps = conn.prepareStatement(SQLConstants.CHECK_EMPLOYEE_BY_ID)){
+			ps.setInt(1, id);
+			
+			try(ResultSet rs = ps.executeQuery()){
+				if(rs.next()) {
+					status = true;
+				}
+			}
+			
+		} catch(SQLException e){
+			System.out.println(e.getMessage());
+		}
+		return status;
+		
+	}
 	
 	public int insertEmployee(List<EmployeeDTO> employee) {
 		Integer id;

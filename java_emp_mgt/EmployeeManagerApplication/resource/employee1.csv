@@ -1,0 +1,7 @@
+﻿emp_id,first_name,last_name,email,phone,department,salary,join_date
+300,A,Z,az@gmail.com,,HR,31000,22-01-2016
+301,,Y,y@gmail.com,9854673681,Finance,98000,17-04-2013
+302,B,X,,9874563451,HR,97000,19-06-2012
+303,C,W,cw@gmail.com,9854673452,HR,32000,12-12-2012
+304,D,,d@gmail.com,9878654316,Education,87000,29-07-2018
+304,E,V,ev@gmail.com,9546738251,Finance,12000,19-09-2022
