@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CSVUtil {
 	
-	public List<String[]> readCSV(String filename) {
+	public static List<String[]> readCSV(String filename) {
         String line;
         List<String[]> data = new ArrayList<>();
 

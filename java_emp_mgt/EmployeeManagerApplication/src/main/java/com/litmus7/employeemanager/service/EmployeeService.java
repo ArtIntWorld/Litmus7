@@ -1,91 +1,124 @@
 package com.litmus7.employeemanager.service;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import com.litmus7.employeemanager.dao.EmployeeDAO;
 import com.litmus7.employeemanager.dto.EmployeeDTO;
-import com.litmus7.employeemanager.dto.EmployeeValidDTO;
 import com.litmus7.employeemanager.util.CSVUtil;
-import com.litmus7.employeemanager.util.ValidationUtil;
+import com.litmus7.employeemanager.util.ValidationsUtil;
 
 public class EmployeeService {
+	private EmployeeDAO employeeDao = new EmployeeDAO();
 	
-	public EmployeeValidDTO ValidateEmployeeDetails(List<String[]> employee_data) {
-		List<String[]> validEmployeeData = new ArrayList<>();
-		List<String> duplicate = new ArrayList<>();
-		
-		for(String[] data : employee_data) {
-			String id = data[0].trim();
-			String firstName = data[1].trim();
-            String lastName = data[2].trim();
-            String email = data[3].trim();
-            String phone = data[4].trim();
-            String department = data[5].trim();
-            String salary = data[6].trim();
-            String date = data[7].trim();
-
-            if ( ! duplicate.contains(data[0]) && ValidationUtil.isValidID(id)  && ValidationUtil.isValidName(firstName) && ValidationUtil.isValidName(lastName) && ValidationUtil.isValidEmail(email) && ValidationUtil.isValidPhone(phone) && ValidationUtil.isValidDepartment(department) && ValidationUtil.isValidSalary(salary) && ValidationUtil.isValidJoinDate(date)) {
-            	
-            	duplicate.add(data[0]);
-            	validEmployeeData.add(data);
-            }
+	private static final Logger LOGGER = Logger.getLogger(EmployeeService.class.getName());
+	
+	static {
+		try {
+			LogManager.getLogManager().reset();
+			
+			FileHandler fileHandler = new FileHandler("logs/employee-import-error.log",true);
+			fileHandler.setFormatter(new SimpleFormatter());
+			LOGGER.addHandler(fileHandler);
+			LOGGER.setLevel(Level.ALL);
+			
+		} catch(IOException e) {
+			System.err.println("Failed to set up logger: " + e.getMessage());
 		}
-        return new EmployeeValidDTO(validEmployeeData);
 	}
 	
+	
+	
 	public List<EmployeeDTO> exportEmployeeDetails(){
-		EmployeeDAO allEmployeeSelect = new EmployeeDAO();
-		List<EmployeeDTO> allEmployeeList = allEmployeeSelect.selectAllEmployee();
-		
+		List<EmployeeDTO> allEmployeeList = employeeDao.selectAllEmployee();
 		return allEmployeeList;
 	}
 	
-	public List<EmployeeDTO> convertToEmployeeObject(List<String[]> csvdata) {
-		List<EmployeeDTO> employeeList = new ArrayList<>();
-		
-		for(String[] data : csvdata) {
-			EmployeeDTO employee = new EmployeeDTO();
+	
+	public static EmployeeDTO convertToEmployeeObject(String[] rawEmployee) {
+		EmployeeDTO employee = new EmployeeDTO();
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate date = LocalDate.parse(rawEmployee[7], formatter);
 			
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-            LocalDate date = LocalDate.parse(data[7], formatter);
-			
-			employee.setID(Integer.parseInt(data[0].trim()));
-			employee.setFirstName(data[1].trim());
-			employee.setLastName(data[2].trim());
-			employee.setEmail(data[3].trim());
-			employee.setPhone(data[4].trim());
-			employee.setDepartment(data[5].trim());
-			employee.setSalary(Double.parseDouble(data[6].trim()));
-			employee.setJoinDate(Date.valueOf(date));
-			
-			employeeList.add(employee);
-		}	
-		return employeeList;
+		employee.setID(Integer.parseInt(rawEmployee[0].trim()));
+		employee.setFirstName(rawEmployee[1].trim());
+		employee.setLastName(rawEmployee[2].trim());
+		employee.setEmail(rawEmployee[3].trim());
+		employee.setPhone(rawEmployee[4].trim());
+		employee.setDepartment(rawEmployee[5].trim());
+		employee.setSalary(Double.parseDouble(rawEmployee[6].trim()));
+		employee.setJoinDate(Date.valueOf(date));
+
+		return employee;
 	}
 	
-	public EmployeeValidDTO writeEmployeeToDB(String filepath) {
-		CSVUtil csv = new CSVUtil();
+	public HashMap<String, Integer> importEmployeeToDB(String filepath){
 		
-		List<String[]> employeeCSVData = csv.readCSV(filepath);
+		HashMap<String, Integer> result = new HashMap<>();
+		List<String[]> rawEmployees = null;
 		
-		EmployeeValidDTO validEmployeeEntry = this.ValidateEmployeeDetails(employeeCSVData);
+		int dataIndex = 0;
+		int totalData = 0;
+		int successData = 0;
+
+	    result.put("totalData",totalData);
+	    result.put("successData", successData);
 		
-		List<EmployeeDTO> valid_employee_data =this.convertToEmployeeObject(validEmployeeEntry.getData());	
-		
-		EmployeeDAO employeeDAO = new EmployeeDAO(); 
-		
-		int validEntryCount = employeeDAO.insertEmployee(valid_employee_data);
-		
-		if (validEntryCount != employeeCSVData.size()) {
-			return new EmployeeValidDTO(false, validEntryCount);
+		try {
+			rawEmployees = CSVUtil.readCSV(filepath);
+		} catch(Exception e) {
+			LOGGER.log(Level.SEVERE, "Failed to read CSV file : " + e);
+			return result;
 		}
 		
-		return new EmployeeValidDTO(true, validEntryCount);
+		result.put("totalData", rawEmployees.size());
 		
+		try {
+			
+			for(String[] rawEmployee : rawEmployees) {
+				
+				dataIndex++;
+				
+				if(rawEmployee.length != 8) {
+					LOGGER.warning("Row " + dataIndex + " : Insufficient data found.");
+					continue;
+				}
+				
+				if(! ValidationsUtil.validateEmployee(rawEmployee)) {
+					LOGGER.warning("Row " + dataIndex + " : Validation failed.");
+					continue;
+				}
+				
+				if(employeeDao.getEmployeeByID(Integer.parseInt(rawEmployee[0].trim()))) {
+					LOGGER.warning("Row " + dataIndex + " : Duplicate entry for employee ID  " + rawEmployee[0]);
+					continue;
+				}
+				
+				if(employeeDao.saveEmployee(convertToEmployeeObject(rawEmployee))){
+					successData++;
+				} else {
+					LOGGER.warning("Row " + dataIndex + " : Failed to insert the data.");
+				}
+				
+			}
+			
+		} catch(Exception e) {
+			LOGGER.log(Level.SEVERE, "Row " + dataIndex + " : Something went wrong.");
+		}
+		
+		result.put("successData", successData);
+		
+		return result; 
 	}
 	
 }

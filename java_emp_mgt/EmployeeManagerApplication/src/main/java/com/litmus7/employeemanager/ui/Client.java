@@ -13,26 +13,37 @@ public class Client {
 		EmployeeController request = new EmployeeController();
 		
 		String filepath = "D:\\Litmus7\\java_emp_mgt\\EmployeeManagerApplication\\resource\\employee1.csv";
-		ResponseDTO<Integer> exportResponse = request.importEmployeeToDB(filepath);
+		ResponseDTO<Integer> exportResponse = request.writeEmployeeToDB(filepath);
 		
-		System.out.println("Status : " + exportResponse.getStatus());
-		System.out.println("Message : " + exportResponse.getMessage());
-		System.out.println("Entries in : " + exportResponse.getData());
+		if(exportResponse.getStatus() == 200) {
+			System.out.println("Status : " + exportResponse.getStatus());
+			System.out.println("Message : " + exportResponse.getMessage());
+		}
+		else if(exportResponse.getStatus() == 206) {
+			System.out.println("Status : " + exportResponse.getStatus());
+			System.out.println("Message : " + exportResponse.getMessage());
+			System.out.println("Successful Entries : " + exportResponse.getData());
+		}
+		else {
+			System.out.println("Status : " + exportResponse.getStatus());
+			System.out.println("Message : " + exportResponse.getMessage());
+		}
 		
 		System.out.println();
 		
 		ResponseDTO<List<EmployeeDTO>> AllEmployeeResponse = request.AllEmployeeDetails();
-		List<EmployeeDTO> allEmployees = AllEmployeeResponse.getData();
+		List<EmployeeDTO> employees = AllEmployeeResponse.getData();
 		
-		if(allEmployees == null) {
+		if(employees == null) {
 			System.out.println("No employee data!");
 		} else {	
+			Integer id;
+			String first_name, last_name, email, phone, department;
+			double salary;
+			Date join_date;
+			
 			System.out.println("ID\tName\t\tEmail\t\tPhone\t\tDepartment\tSalary\t\tJoining Date");
-			for(EmployeeDTO employee : allEmployees) {
-				Integer id;
-				String first_name, last_name, email, phone, department;
-				double salary;
-				Date join_date;
+			for(EmployeeDTO employee : employees) {
 				
 				id = employee.getID();
 				first_name = employee.getFirstName();

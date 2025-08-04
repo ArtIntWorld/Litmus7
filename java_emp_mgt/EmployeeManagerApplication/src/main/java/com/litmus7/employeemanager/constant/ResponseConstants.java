@@ -14,5 +14,6 @@ public class ResponseConstants {
     public static final String PARTIAL_VALID_ERROR_MESSAGE = "Some rows failed validation.";
     public static final String FULL_VALID_ERROR_MESSAGE = "All rows failed validation.";
     public static final String EMPTY_EMPLOYEE_MESSAGE = "No employee data provided.";
+    public static final String ERROR_CSV_MESSAGE = "Unable to read the file.";
     
 }
