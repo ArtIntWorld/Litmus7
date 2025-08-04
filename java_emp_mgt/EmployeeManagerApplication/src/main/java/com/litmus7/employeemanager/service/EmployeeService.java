@@ -104,7 +104,6 @@ public class EmployeeService {
 				}
 				
 				if(employeeDao.saveEmployee(convertToEmployeeObject(rawEmployee))){
-					System.out.println(rawEmployee + "Hiii");
 					successData++;
 				} else {
 					LOGGER.warning("Row " + dataIndex + " : Failed to insert the data.");
@@ -113,7 +112,7 @@ public class EmployeeService {
 			}
 			
 		} catch(Exception e) {
-			LOGGER.log(Level.SEVERE, "Row " + dataIndex + " : Something went wrong.");
+			LOGGER.log(Level.SEVERE, "Row " + dataIndex + " : Something went wrong : " + e.getMessage());
 		}
 		
 		result.put("successData", successData);

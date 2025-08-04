@@ -13,12 +13,10 @@ import com.litmus7.employeemanager.dto.EmployeeDTO;
 import com.litmus7.employeemanager.util.DatabaseConnectionUtil;
 
 public class EmployeeDAO {
-	
-	private EmployeeDTO employee;
 
 	public EmployeeDTO getEmployeeByID(int id) {
 		
-		employee = null;
+		EmployeeDTO employee = null;
 		
 		try(Connection conn = DatabaseConnectionUtil.getConnection();
 				PreparedStatement ps = conn.prepareStatement(SQLConstants.GET_EMPLOYEE_BY_ID)){
@@ -26,7 +24,9 @@ public class EmployeeDAO {
 			ps.setInt(1, id);
 			
 			try(ResultSet rs = ps.executeQuery()){
-				if(rs.next()) {		
+				if(rs.next()) {	
+					employee = new EmployeeDTO();
+					
 					employee.setID(rs.getInt(1));
 					employee.setFirstName(rs.getString(2));
 					employee.setLastName(rs.getString(3));
@@ -40,8 +40,9 @@ public class EmployeeDAO {
 			}
 			
 		} catch(SQLException e){
-			System.out.println("Helooooooooo" + e.getMessage());
+			System.out.println(e.getMessage());
 		}
+		System.out.println(employee);
 		return employee;
 	}
 	
@@ -70,7 +71,7 @@ public class EmployeeDAO {
 			}
 			
 		} catch(SQLException e) {
-			System.out.println("HIIIIIIII" + e.getMessage());
+			System.out.println(e.getMessage());
 		}
 		
 		return employees;
@@ -104,7 +105,7 @@ public class EmployeeDAO {
 	        return rowsInserted > 0;
 
 		} catch(SQLException e) {
-			System.out.println("Byeeeeeee" + e.getMessage());
+			System.out.println(e.getMessage());
 			return false;
 		}
 	}
