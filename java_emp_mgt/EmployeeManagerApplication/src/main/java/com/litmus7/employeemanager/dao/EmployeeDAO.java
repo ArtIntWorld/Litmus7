@@ -14,55 +14,66 @@ import com.litmus7.employeemanager.util.DatabaseConnectionUtil;
 
 public class EmployeeDAO {
 	
-	public boolean getEmployeeByID(int id) {
+	private EmployeeDTO employee;
 
-		boolean status = false;
+	public EmployeeDTO getEmployeeByID(int id) {
+		
+		employee = null;
 		
 		try(Connection conn = DatabaseConnectionUtil.getConnection();
-				PreparedStatement ps = conn.prepareStatement(SQLConstants.CHECK_EMPLOYEE_BY_ID)){
+				PreparedStatement ps = conn.prepareStatement(SQLConstants.GET_EMPLOYEE_BY_ID)){
+			
 			ps.setInt(1, id);
 			
 			try(ResultSet rs = ps.executeQuery()){
-				if(rs.next()) {
-					status = true;
+				if(rs.next()) {		
+					employee.setID(rs.getInt(1));
+					employee.setFirstName(rs.getString(2));
+					employee.setLastName(rs.getString(3));
+					employee.setEmail(rs.getString(4));
+					employee.setPhone(rs.getString(5));
+					employee.setDepartment(rs.getString(6));
+					employee.setSalary(rs.getDouble(7));
+					employee.setJoinDate(rs.getDate(8));
 				}
+				
 			}
 			
 		} catch(SQLException e){
-			System.out.println(e.getMessage());
+			System.out.println("Helooooooooo" + e.getMessage());
 		}
-		return status;
+		return employee;
 	}
 	
-	public List<EmployeeDTO> selectAllEmployee() {
+	public List<EmployeeDTO> getEmployees() {
 		
-		List<EmployeeDTO> allEmployees = new ArrayList<>();
+		List<EmployeeDTO> employees = new ArrayList<>();
 		
 		try(Connection conn = DatabaseConnectionUtil.getConnection();
-				PreparedStatement ps = conn.prepareStatement(SQLConstants.ALL_EMPLOYEE_SELECT)){
+				PreparedStatement ps = conn.prepareStatement(SQLConstants.GET_EMPLOYEES)){
 			
 			try(ResultSet rs = ps.executeQuery()){
 				
 				while(rs.next()) {
 					EmployeeDTO employee = new EmployeeDTO();
-					employee.setID(rs.getInt("emp_id"));
-					employee.setFirstName(rs.getString("first_name"));
-					employee.setLastName(rs.getString("last_name"));
-					employee.setEmail(rs.getString("email"));
-					employee.setPhone(rs.getString("phone"));
-					employee.setDepartment(rs.getString("department"));
-					employee.setSalary(rs.getDouble("salary"));
-					employee.setJoinDate(rs.getDate("join_date"));
+					employee.setID(rs.getInt(1));
+					employee.setFirstName(rs.getString(2));
+					employee.setLastName(rs.getString(3));
+					employee.setEmail(rs.getString(4));
+					employee.setPhone(rs.getString(5));
+					employee.setDepartment(rs.getString(6));
+					employee.setSalary(rs.getDouble(7));
+					employee.setJoinDate(rs.getDate(8));
 					
-					allEmployees.add(employee);
+					employees.add(employee);
 				}
 			}
 			
 		} catch(SQLException e) {
-			System.out.println(e.getMessage());
+			System.out.println("HIIIIIIII" + e.getMessage());
 		}
 		
-		return allEmployees;
+		return employees;
 		
 	}
 	
@@ -78,7 +89,7 @@ public class EmployeeDAO {
 		Date join_date = employee.getJoinDate();
 		
 		try(Connection conn = DatabaseConnectionUtil.getConnection();
-				PreparedStatement ps = conn.prepareStatement(SQLConstants.EMPLOYEE_INSERT);) {
+				PreparedStatement ps = conn.prepareStatement(SQLConstants.ADD_EMPLOYEE);) {
 		
 		    ps.setInt(1, id);
 	        ps.setString(2, first_name);
@@ -93,8 +104,10 @@ public class EmployeeDAO {
 	        return rowsInserted > 0;
 
 		} catch(SQLException e) {
-			System.out.println(e.getMessage());
+			System.out.println("Byeeeeeee" + e.getMessage());
 			return false;
 		}
 	}
 }
+
+

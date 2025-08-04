@@ -16,7 +16,6 @@ public class Client {
 		ResponseDTO<Integer> exportResponse = request.writeEmployeeToDB(filepath);
 		
 		if(exportResponse.getStatus() == 200) {
-			System.out.println("Status : " + exportResponse.getStatus());
 			System.out.println("Message : " + exportResponse.getMessage());
 		}
 		else if(exportResponse.getStatus() == 206) {
@@ -31,12 +30,16 @@ public class Client {
 		
 		System.out.println();
 		
-		ResponseDTO<List<EmployeeDTO>> AllEmployeeResponse = request.AllEmployeeDetails();
-		List<EmployeeDTO> employees = AllEmployeeResponse.getData();
+		ResponseDTO<List<EmployeeDTO>> getEmployeesResponse = request.getAllEmployees();
 		
-		if(employees == null) {
-			System.out.println("No employee data!");
+		
+		if(getEmployeesResponse.getStatus() == 204) {
+			System.out.println("Status : " + getEmployeesResponse.getStatus());
+			System.out.println("Message : " + getEmployeesResponse.getMessage());
 		} else {	
+			
+			List<EmployeeDTO> employees = getEmployeesResponse.getData();
+			
 			Integer id;
 			String first_name, last_name, email, phone, department;
 			double salary;

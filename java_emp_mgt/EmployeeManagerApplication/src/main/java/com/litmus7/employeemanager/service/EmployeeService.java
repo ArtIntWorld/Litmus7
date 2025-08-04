@@ -39,8 +39,8 @@ public class EmployeeService {
 	
 	
 	public List<EmployeeDTO> exportEmployeeDetails(){
-		List<EmployeeDTO> allEmployeeList = employeeDao.selectAllEmployee();
-		return allEmployeeList;
+		List<EmployeeDTO> employeesList = employeeDao.getEmployees();
+		return employeesList;
 	}
 	
 	
@@ -86,7 +86,6 @@ public class EmployeeService {
 		try {
 			
 			for(String[] rawEmployee : rawEmployees) {
-				
 				dataIndex++;
 				
 				if(rawEmployee.length != 8) {
@@ -99,12 +98,13 @@ public class EmployeeService {
 					continue;
 				}
 				
-				if(employeeDao.getEmployeeByID(Integer.parseInt(rawEmployee[0].trim()))) {
-					LOGGER.warning("Row " + dataIndex + " : Duplicate entry for employee ID  " + rawEmployee[0]);
+				if(employeeDao.getEmployeeByID(Integer.parseInt(rawEmployee[0])) != null) {
+					LOGGER.warning("Row " + dataIndex + " : Duplicate entry for employee ID " + rawEmployee[0]);
 					continue;
 				}
 				
 				if(employeeDao.saveEmployee(convertToEmployeeObject(rawEmployee))){
+					System.out.println(rawEmployee + "Hiii");
 					successData++;
 				} else {
 					LOGGER.warning("Row " + dataIndex + " : Failed to insert the data.");

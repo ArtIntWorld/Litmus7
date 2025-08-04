@@ -12,13 +12,13 @@ public class EmployeeController {
 	
 	EmployeeService employeeService = new EmployeeService();
 	
-	public ResponseDTO<List<EmployeeDTO>> AllEmployeeDetails(){
-		List<EmployeeDTO> allemployees = employeeService.exportEmployeeDetails();
+	public ResponseDTO<List<EmployeeDTO>> getAllEmployees(){
+		List<EmployeeDTO> employees = employeeService.exportEmployeeDetails();
 		
-		if(allemployees == null) {
-			return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.EMPTY_EMPLOYEE_MESSAGE, allemployees);
+		if(employees == null) {
+			return new ResponseDTO<>(ResponseConstants.NO_CONTENT, ResponseConstants.NO_CONTENT_MESSAGE);
 		}
-		return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.IMPORT_SUCCESS_MESSAGE, allemployees);
+		return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.IMPORT_SUCCESS_MESSAGE, employees);
 	}
 	
 	public ResponseDTO<Integer> writeEmployeeToDB(String filePath) {
