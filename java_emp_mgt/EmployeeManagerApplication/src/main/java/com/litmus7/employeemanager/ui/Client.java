@@ -33,7 +33,7 @@ public class Client {
 		ResponseDTO<List<EmployeeDTO>> getEmployeesResponse = request.getAllEmployees();
 		
 		
-		if(getEmployeesResponse.getStatus() == 204) {
+		if(getEmployeesResponse.getStatus() != 200) {
 			System.out.println("Status : " + getEmployeesResponse.getStatus());
 			System.out.println("Message : " + getEmployeesResponse.getMessage());
 		} else {	

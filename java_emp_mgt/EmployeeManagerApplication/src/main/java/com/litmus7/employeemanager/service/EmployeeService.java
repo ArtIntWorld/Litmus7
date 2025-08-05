@@ -14,6 +14,8 @@ import java.util.logging.SimpleFormatter;
 
 import com.litmus7.employeemanager.dao.EmployeeDAO;
 import com.litmus7.employeemanager.dto.EmployeeDTO;
+import com.litmus7.employeemanager.exception.EmployeeDAOException;
+import com.litmus7.employeemanager.exception.EmployeeServiceException;
 import com.litmus7.employeemanager.util.CSVUtil;
 import com.litmus7.employeemanager.util.ValidationsUtil;
 
@@ -38,9 +40,24 @@ public class EmployeeService {
 	
 	
 	
-	public List<EmployeeDTO> exportEmployeeDetails(){
-		List<EmployeeDTO> employeesList = employeeDao.getEmployees();
-		return employeesList;
+	public List<EmployeeDTO> exportEmployeeDetails() throws EmployeeServiceException{
+		
+		List<EmployeeDTO> employeesList = null;
+		
+		try {
+			employeesList = employeeDao.getEmployees();
+			
+			if(employeesList == null || employeesList.isEmpty()) {
+				throw new EmployeeServiceException("The table contains no data to be retrieved.");
+			}
+			
+			return employeesList;
+			
+		} catch(EmployeeDAOException e) {
+			LOGGER.log(Level.SEVERE, "Error while exporting data : " + e.getMessage());
+			throw new EmployeeServiceException(e.getMessage(), e);
+		}
+		
 	}
 	
 	
@@ -62,7 +79,7 @@ public class EmployeeService {
 		return employee;
 	}
 	
-	public HashMap<String, Integer> importEmployeeToDB(String filepath){
+	public HashMap<String, Integer> importEmployeeToDB(String filepath) throws EmployeeServiceException{
 		
 		HashMap<String, Integer> result = new HashMap<>();
 		List<String[]> rawEmployees = null;
@@ -78,7 +95,7 @@ public class EmployeeService {
 			rawEmployees = CSVUtil.readCSV(filepath);
 		} catch(Exception e) {
 			LOGGER.log(Level.SEVERE, "Failed to read CSV file : " + e);
-			return result;
+			throw new EmployeeServiceException(e.getMessage(), e);
 		}
 		
 		result.put("totalData", rawEmployees.size());
@@ -110,14 +127,14 @@ public class EmployeeService {
 				}
 				
 			}
+			result.put("successData", successData);
+			
+			return result;
 			
 		} catch(Exception e) {
 			LOGGER.log(Level.SEVERE, "Row " + dataIndex + " : Something went wrong : " + e.getMessage());
-		}
-		
-		result.put("successData", successData);
-		
-		return result; 
+			throw new EmployeeServiceException(e.getMessage(), e);
+		} 
 	}
 	
 }

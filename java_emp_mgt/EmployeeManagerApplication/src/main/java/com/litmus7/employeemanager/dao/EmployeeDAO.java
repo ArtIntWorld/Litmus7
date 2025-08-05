@@ -1,5 +1,6 @@
 package com.litmus7.employeemanager.dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -7,14 +8,37 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 import com.litmus7.employeemanager.constant.SQLConstants;
 import com.litmus7.employeemanager.dto.EmployeeDTO;
+import com.litmus7.employeemanager.exception.EmployeeDAOException;
+import com.litmus7.employeemanager.service.EmployeeService;
 import com.litmus7.employeemanager.util.DatabaseConnectionUtil;
 
 public class EmployeeDAO {
+	
+	private static final Logger LOGGER = Logger.getLogger(EmployeeService.class.getName());
+		
+		static {
+			try {
+				LogManager.getLogManager().reset();
+				
+				FileHandler fileHandler = new FileHandler("logs/employee-import-error.log",true);
+				fileHandler.setFormatter(new SimpleFormatter());
+				LOGGER.addHandler(fileHandler);
+				LOGGER.setLevel(Level.ALL);
+				
+			} catch(IOException e) {
+				System.err.println("Failed to set up logger: " + e.getMessage());
+			}
+		}
 
-	public EmployeeDTO getEmployeeByID(int id) {
+	public EmployeeDTO getEmployeeByID(int id) throws EmployeeDAOException {
 		
 		EmployeeDTO employee = null;
 		
@@ -38,15 +62,16 @@ public class EmployeeDAO {
 				}
 				
 			}
+			return employee;
 			
 		} catch(SQLException e){
-			System.out.println(e.getMessage());
+			LOGGER.log(Level.SEVERE, "Error at getEmployeeByID() : " + e.getMessage());
+			throw new EmployeeDAOException(e.getMessage(), e);
 		}
-		System.out.println(employee);
-		return employee;
+		
 	}
 	
-	public List<EmployeeDTO> getEmployees() {
+	public List<EmployeeDTO> getEmployees() throws EmployeeDAOException {
 		
 		List<EmployeeDTO> employees = new ArrayList<>();
 		
@@ -69,16 +94,18 @@ public class EmployeeDAO {
 					employees.add(employee);
 				}
 			}
+			return employees;
 			
 		} catch(SQLException e) {
-			System.out.println(e.getMessage());
+			LOGGER.log(Level.SEVERE, "Error at getEmployee() : " + e.getMessage());
+			throw new EmployeeDAOException(e.getMessage(), e);
 		}
 		
-		return employees;
+		
 		
 	}
 	
-	public boolean saveEmployee(EmployeeDTO employee) {
+	public boolean saveEmployee(EmployeeDTO employee) throws EmployeeDAOException {
 		
 		Integer id = employee.getID();
 		String first_name = employee.getFirstName();
@@ -105,8 +132,8 @@ public class EmployeeDAO {
 	        return rowsInserted > 0;
 
 		} catch(SQLException e) {
-			System.out.println(e.getMessage());
-			return false;
+			LOGGER.log(Level.SEVERE, "Error at getEmployee() : " + e.getMessage());
+			throw new EmployeeDAOException(e.getMessage(), e);
 		}
 	}
 }
