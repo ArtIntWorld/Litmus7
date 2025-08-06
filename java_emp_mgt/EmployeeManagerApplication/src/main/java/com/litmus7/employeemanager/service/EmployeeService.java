@@ -48,6 +48,7 @@ public class EmployeeService {
 			employeesList = employeeDao.getEmployees();
 			
 			if(employeesList == null || employeesList.isEmpty()) {
+				LOGGER.warning("The table contains no data to be retrieved.");
 				throw new EmployeeServiceException("The table contains no data to be retrieved.");
 			}
 			
@@ -135,6 +136,98 @@ public class EmployeeService {
 			LOGGER.log(Level.SEVERE, "Row " + dataIndex + " : Something went wrong : " + e.getMessage());
 			throw new EmployeeServiceException(e.getMessage(), e);
 		} 
+	}
+	
+	public void removeEmployee(int id) throws EmployeeServiceException {
+		try {
+
+			int deleteStatus = employeeDao.deleteEmployee(id);
+			
+			if(deleteStatus == 0) {
+				LOGGER.warning("No employee was found with the ID " + id);
+				throw new EmployeeServiceException("No employee was found with the ID " + id);
+			}
+			
+		}catch(EmployeeDAOException e) {
+			LOGGER.log(Level.SEVERE, "Error while removing employee with ID " + id + " : " + e.getMessage());
+			throw new EmployeeServiceException(e.getMessage(), e);
+		}
+		
+	}
+	
+	public void updateEmployee(String[] rawEmployee) throws EmployeeServiceException {
+		
+		if(rawEmployee.length != 8) {
+			LOGGER.warning("Employee with ID " + rawEmployee[0] + " has insufficient data found.");
+			throw new EmployeeServiceException("Updation of Employee with ID " + rawEmployee[0] + " has failed validation.");
+		}
+		
+		if(! ValidationsUtil.validateEmployee(rawEmployee)) {
+			LOGGER.warning("Employee with ID " + rawEmployee[0] + " has failed validation.");
+			throw new EmployeeServiceException("Updation of Employee with ID " + rawEmployee[0] + " has failed validation.");
+		}
+		
+		EmployeeDTO employee = convertToEmployeeObject(rawEmployee);
+		
+		try {
+			int updateStatus = employeeDao.updateEmployee(employee);
+			
+			if(updateStatus == 0) {
+				LOGGER.warning("No employee was found with the ID " + employee.getID());
+				throw new EmployeeServiceException("No employee was found with the ID " + employee.getID());
+			}
+			
+		} catch (EmployeeDAOException e) {
+			LOGGER.log(Level.SEVERE, "Error while updating employee with ID " + rawEmployee[0] + " : " + e.getMessage());
+			throw new EmployeeServiceException(e.getMessage(), e);
+		}
+	}
+	
+	public EmployeeDTO getEmployeeByID(int id) throws EmployeeServiceException {
+		try {
+			
+			EmployeeDTO employee = employeeDao.getEmployeeByID(id);
+			
+			if(employee == null) {
+				LOGGER.warning( "No employee with the ID " + id + ".");
+				throw new EmployeeServiceException("No employee with the ID " + id + ".");
+			}
+			
+			return employee;
+			
+		}catch(EmployeeDAOException e) {
+			LOGGER.log(Level.SEVERE, "Error while retrieving employee : " + e.getMessage());
+			throw new EmployeeServiceException(e.getMessage(), e);
+		}
+	}
+	
+	public void addEmployee(String[] rawEmployee) throws EmployeeServiceException {
+		
+		try {
+			
+			if(rawEmployee.length != 8) {
+				LOGGER.warning("Employee with ID " + rawEmployee[0] + " has insufficient data found.");
+				throw new EmployeeServiceException("Insertion of Employee with ID " + rawEmployee[0] + " has failed validation.");
+			}
+			
+			if(! ValidationsUtil.validateEmployee(rawEmployee)) {
+				LOGGER.warning("Employee with ID " + rawEmployee[0] + " has failed validation.");
+				throw new EmployeeServiceException("Insertion of Employee with ID " + rawEmployee[0] + " has failed validation.");
+			}
+			
+			if(employeeDao.getEmployeeByID(Integer.parseInt(rawEmployee[0])) != null) {
+				LOGGER.warning("Employee with ID " + rawEmployee[0] + " has failed validation.");
+				throw new EmployeeServiceException("Insertion of Employee with ID " + rawEmployee[0] + " has failed validation.");
+			}
+			
+			EmployeeDTO employee = convertToEmployeeObject(rawEmployee);
+			
+			employeeDao.addEmployee(employee);
+			
+		} catch (EmployeeDAOException e) {
+			LOGGER.log(Level.SEVERE, "Error while updating employee with ID " + rawEmployee[0] + " : " + e.getMessage());
+			throw new EmployeeServiceException(e.getMessage(), e);
+		}
 	}
 	
 }

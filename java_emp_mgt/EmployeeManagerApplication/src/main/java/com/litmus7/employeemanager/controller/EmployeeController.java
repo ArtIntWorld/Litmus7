@@ -57,4 +57,48 @@ public class EmployeeController {
 			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
 		}
 	}
+	
+	public ResponseDTO<Void> removeEmployeeFromDB(int id){
+		
+		try {
+			
+			employeeService.removeEmployee(id);
+			return new ResponseDTO<>(ResponseConstants.OK,ResponseConstants.REMOVE_SUCCESS_MESSAGE);
+			
+		}catch(EmployeeServiceException e) {
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
+		}
+		
+	}
+	
+	public ResponseDTO<Void> updateExistingEmployee(String[] employee){
+		try {
+			
+			employeeService.updateEmployee(employee);
+			return new ResponseDTO<>(ResponseConstants.OK,ResponseConstants.UPDATE_SUCCESS_MESSAGE);
+			
+		} catch(EmployeeServiceException e) {
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
+		}
+	}
+	
+	public ResponseDTO<EmployeeDTO> retrieveEmployeeByID(int id){
+		try {
+			EmployeeDTO employee = employeeService.getEmployeeByID(id);
+			return new ResponseDTO<>(ResponseConstants.OK,ResponseConstants.UPDATE_SUCCESS_MESSAGE, employee);
+		} catch(EmployeeServiceException e) {
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
+		}
+	}
+	
+	public ResponseDTO<Void> addNewEmployee(String[] employee){
+		try {
+			
+			employeeService.addEmployee(employee);
+			return new ResponseDTO<>(ResponseConstants.OK,ResponseConstants.ADD_SUCCESS_MESSAGE);
+			
+		} catch(EmployeeServiceException e) {
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
+		}
+	}
 }

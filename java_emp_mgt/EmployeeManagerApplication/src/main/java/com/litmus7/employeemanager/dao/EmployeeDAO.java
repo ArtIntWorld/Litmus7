@@ -65,7 +65,7 @@ public class EmployeeDAO {
 			return employee;
 			
 		} catch(SQLException e){
-			LOGGER.log(Level.SEVERE, "Error at getEmployeeByID() : " + e.getMessage());
+			LOGGER.log(Level.SEVERE, "Error at while selecting data by ID from database : " + e.getMessage());
 			throw new EmployeeDAOException(e.getMessage(), e);
 		}
 		
@@ -97,7 +97,7 @@ public class EmployeeDAO {
 			return employees;
 			
 		} catch(SQLException e) {
-			LOGGER.log(Level.SEVERE, "Error at getEmployee() : " + e.getMessage());
+			LOGGER.log(Level.SEVERE, "Error while selecting data from database : " + e.getMessage());
 			throw new EmployeeDAOException(e.getMessage(), e);
 		}
 		
@@ -132,10 +132,71 @@ public class EmployeeDAO {
 	        return rowsInserted > 0;
 
 		} catch(SQLException e) {
-			LOGGER.log(Level.SEVERE, "Error at getEmployee() : " + e.getMessage());
+			LOGGER.log(Level.SEVERE, "Error while saving data into database : " + e.getMessage());
 			throw new EmployeeDAOException(e.getMessage(), e);
 		}
 	}
+	
+	public int deleteEmployee(int id) throws EmployeeDAOException {
+		
+		try(Connection conn = DatabaseConnectionUtil.getConnection();
+				PreparedStatement ps = conn.prepareStatement(SQLConstants.DELETE_EMPLOYEE)){
+			
+			ps.setInt(1, id);
+			int rowsAffected = ps.executeUpdate();
+			return rowsAffected;
+			
+		}catch(SQLException e) {
+			LOGGER.log(Level.SEVERE, "Error while deleting data from database : " + e.getMessage());
+			throw new EmployeeDAOException(e.getMessage(), e);
+		}
+	}
+	
+	public int updateEmployee(EmployeeDTO employee) throws EmployeeDAOException {
+		
+		try(Connection conn = DatabaseConnectionUtil.getConnection();
+				PreparedStatement ps = conn.prepareStatement(SQLConstants.UPDATE_EMPLOYEE)){
+			
+			ps.setInt(8, employee.getID());
+			ps.setString(1, employee.getFirstName());
+			ps.setString(2, employee.getLastName());
+			ps.setString(3, employee.getEmail());
+			ps.setString(4, employee.getPhone());
+			ps.setString(5, employee.getDepartment());
+			ps.setDouble(6, employee.getSalary());
+			ps.setDate(7, employee.getJoinDate());
+			
+			int rowsAffected = ps.executeUpdate();
+			return rowsAffected;
+			
+		}catch(SQLException e) {
+			LOGGER.log(Level.SEVERE, "Error while updating data into database : " + e.getMessage());
+			throw new EmployeeDAOException(e.getMessage(), e);
+		}
+	}
+	
+	public void addEmployee(EmployeeDTO employee) throws EmployeeDAOException {
+		
+		try(Connection conn = DatabaseConnectionUtil.getConnection();
+				PreparedStatement ps = conn.prepareStatement(SQLConstants.ADD_EMPLOYEE)){
+			
+			ps.setInt(1, employee.getID());
+			ps.setString(2, employee.getFirstName());
+			ps.setString(3, employee.getLastName());
+			ps.setString(4, employee.getEmail());
+			ps.setString(5, employee.getPhone());
+			ps.setString(6, employee.getDepartment());
+			ps.setDouble(7, employee.getSalary());
+			ps.setDate(8, employee.getJoinDate());
+			
+			ps.executeUpdate();
+			
+		} catch(SQLException e) {
+			LOGGER.log(Level.SEVERE, "Error while adding data into database : " + e.getMessage());
+			throw new EmployeeDAOException(e.getMessage(), e);
+		}
+	}
+	
 }
 
 

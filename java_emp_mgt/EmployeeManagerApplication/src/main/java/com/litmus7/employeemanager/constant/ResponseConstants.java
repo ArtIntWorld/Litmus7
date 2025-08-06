@@ -16,5 +16,7 @@ public class ResponseConstants {
     public static final String FULL_VALID_ERROR_MESSAGE = "All rows failed validation.";
     public static final String NO_CONTENT_MESSAGE = "No employee data provided.";
     public static final String ERROR_CSV_MESSAGE = "Unable to read the file.";
-    
+    public static final String REMOVE_SUCCESS_MESSAGE = "Employee has been removed from the database successfully.";
+	public static final String UPDATE_SUCCESS_MESSAGE = "Employee has been updated into the database successfully.";
+	public static final String ADD_SUCCESS_MESSAGE = "Added new employee details into the database.";
 }
