@@ -284,4 +284,33 @@ public class EmployeeService {
 		}
 	}
 	
+	public HashMap<String, Integer> transferEmployeesToDepartment(List<Integer> employeeIds, String newDepartment) throws EmployeeServiceException {
+		
+		HashMap<String, Integer> result = new HashMap<>();
+		
+		if(employeeIds.isEmpty() || employeeIds == null) {
+			LOGGER.severe("The given list doesnt contain any values.");
+			throw new EmployeeServiceException("The given list doesnt contain any values.");
+		}
+		if(newDepartment.isBlank() || newDepartment == null) {
+			LOGGER.severe("There is no department specified for the transfering.");
+			throw new EmployeeServiceException("There is no department specified for the transfering.");
+		}
+		
+		int totalIds = employeeIds.size();
+		
+		try {
+			
+			int transferCount = employeeDao.transferEmployeesToDepartment(employeeIds, newDepartment);
+			
+			result.put("totalIds", totalIds);
+			result.put("transferCount", transferCount);
+			
+			return result;
+			
+		} catch (EmployeeDAOException e) {
+			LOGGER.severe("Error while changing the department of employees : " + e.getMessage());
+			throw new EmployeeServiceException(e.getMessage(), e);
+		}
+	}
 }

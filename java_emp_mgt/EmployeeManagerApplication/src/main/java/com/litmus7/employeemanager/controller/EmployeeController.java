@@ -46,11 +46,11 @@ public class EmployeeController {
 			if (totalEmployeeData == 0) {
 				return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, ResponseConstants.ERROR_CSV_MESSAGE);
 			} else if(successEmployeeEntries == 0) {
-				return new ResponseDTO<>(ResponseConstants.FULL_VALID_ERROR, ResponseConstants.FULL_VALID_ERROR_MESSAGE);
+				return new ResponseDTO<>(ResponseConstants.FULL_ERROR, ResponseConstants.FULL_VALID_ERROR_MESSAGE);
 			} else if(successEmployeeEntries < totalEmployeeData) {
-				return new ResponseDTO<>(ResponseConstants.PARTIAL_VALID_ERROR, ResponseConstants.PARTIAL_VALID_ERROR_MESSAGE, successEmployeeEntries);
+				return new ResponseDTO<>(ResponseConstants.PARTIAL_ERROR, ResponseConstants.PARTIAL_VALID_ERROR_MESSAGE, successEmployeeEntries);
 			} else {
-				return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.EXPORT_SUCCESS_MESSSAGE, successEmployeeEntries);
+				return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.EXPORT_SUCCESS_MESSSAGE);
 			}
 			
 		} catch(EmployeeServiceException e) {
@@ -111,14 +111,36 @@ public class EmployeeController {
 			int successEmployeeEntries = addStatus.get("successData");
 				
 			if(successEmployeeEntries == 0) {
-				return new ResponseDTO<>(ResponseConstants.FULL_VALID_ERROR, ResponseConstants.FULL_VALID_ERROR_MESSAGE);
+				return new ResponseDTO<>(ResponseConstants.FULL_ERROR, ResponseConstants.FULL_VALID_ERROR_MESSAGE);
 			} else if(successEmployeeEntries < totalEmployeeData) {
-				return new ResponseDTO<>(ResponseConstants.PARTIAL_VALID_ERROR, ResponseConstants.PARTIAL_VALID_ERROR_MESSAGE, successEmployeeEntries);
+				return new ResponseDTO<>(ResponseConstants.PARTIAL_ERROR, ResponseConstants.PARTIAL_VALID_ERROR_MESSAGE, successEmployeeEntries);
 			} else {
-				return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.EXPORT_SUCCESS_MESSSAGE, successEmployeeEntries);
+				return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.EXPORT_SUCCESS_MESSSAGE);
 			}
 			
 		} catch(EmployeeServiceException e) {
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, e.getMessage());
+		}
+		
+	}
+	
+	public ResponseDTO<Integer> transferEmployeesToDepartment(List<Integer> employeeIds, String newDepartment){
+		
+		try {
+			HashMap<String, Integer> transferStatus = employeeService.transferEmployeesToDepartment(employeeIds, newDepartment);
+			
+			int totalIds = transferStatus.get("totalIds");
+			int transferCount = transferStatus.get("transferCount");
+				
+			if(transferCount == 0) {
+				return new ResponseDTO<>(ResponseConstants.FULL_ERROR, ResponseConstants.NO_TRANSFER_MESSAGE);
+			} else if(transferCount < totalIds) {
+				return new ResponseDTO<>(ResponseConstants.PARTIAL_ERROR, ResponseConstants.PARTIAL_TRANSFER_MESSAGE, transferCount);
+			} else {
+				return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.TRANSFER_MESSAGE);
+			}
+			
+		} catch (EmployeeServiceException e) {
 			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, e.getMessage());
 		}
 		

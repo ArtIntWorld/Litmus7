@@ -204,6 +204,47 @@ public class EmployeeDAO {
 		}
 	}
 	
+	public int transferEmployeesToDepartment(List<Integer> employeeIds, String newDepartment) throws EmployeeDAOException{
+		
+		int rowsAffected = 0;
+		
+		try(Connection conn = DatabaseConnectionUtil.getConnection()){
+			
+			conn.setAutoCommit(false);
+			
+			try (PreparedStatement ps = conn.prepareStatement(SQLConstants.TRANSFER_TO_DEPARTMENT)){
+				
+				for(int employeeId : employeeIds)
+				{				
+					ps.setString(1, newDepartment);
+					ps.setInt(2, employeeId);
+					ps.addBatch();
+				}
+				int[] results = ps.executeBatch();
+				
+				for(int result : results) {
+					if(result > 0) {
+						rowsAffected++;
+					}
+				}
+				
+				conn.commit();
+				return rowsAffected;
+				
+			}catch(SQLException e) {
+				conn.rollback();
+				LOGGER.log(Level.SEVERE, "Error while updating with department " + newDepartment + " : " + e.getMessage());
+				throw new EmployeeDAOException(e.getMessage(), e);
+			} finally {
+				conn.setAutoCommit(true);
+			}
+			
+		} catch(SQLException e) {
+			LOGGER.log(Level.SEVERE, "Error while transferring employees to department " + newDepartment + " : " + e.getMessage());
+			throw new EmployeeDAOException(e.getMessage(), e);
+		}
+	}
+	
 }
 
 

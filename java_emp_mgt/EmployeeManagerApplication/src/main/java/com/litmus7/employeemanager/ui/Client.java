@@ -163,6 +163,22 @@ public class Client {
 			System.out.println("Message : " + addResponse.getMessage());
 		}
 		
+		System.out.println("---------------------------------------------------------------------------------------------------------------");
+		
+		List<Integer> employeeIds = Arrays.asList(12, 13, 17);
+		
+		ResponseDTO<Integer> transferDepartmentResponse = request.transferEmployeesToDepartment(employeeIds, "Marketing");
+		
+		if(transferDepartmentResponse.getStatus() == 200) {
+			System.out.println("Message : " + transferDepartmentResponse.getMessage());
+		} else if(transferDepartmentResponse.getStatus() == 206){
+			System.out.println("Transfer Status : " + transferDepartmentResponse.getStatus());
+			System.out.println("Message : " + transferDepartmentResponse.getMessage());
+			System.out.println("Transferred Employees Count : " + transferDepartmentResponse.getData());
+		} else {
+		System.out.println("Transfer Status : " + transferDepartmentResponse.getStatus());
+		System.out.println("Message : " + transferDepartmentResponse.getMessage());
+		}
 	}
 
 }
