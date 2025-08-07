@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CSVUtil {
 	
-	public static List<String[]> readCSV(String filename) {
+	public static List<String[]> readCSV(String filename) throws IOException{
         String line;
         List<String[]> data = new ArrayList<>();
 
@@ -19,9 +19,9 @@ public class CSVUtil {
                 
                 data.add(celldata);
             }
+            return data;
         } catch (IOException e) {
-            System.err.println("File Error: " + e.getMessage());
+            throw new IOException("Failed to read CSV file " + filename + " : " + e.getMessage(), e);
         }
-        return data;
     }
 }

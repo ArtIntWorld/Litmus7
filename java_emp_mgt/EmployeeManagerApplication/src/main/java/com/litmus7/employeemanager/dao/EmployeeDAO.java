@@ -175,21 +175,28 @@ public class EmployeeDAO {
 		}
 	}
 	
-	public void addEmployee(EmployeeDTO employee) throws EmployeeDAOException {
+	public int addEmployeesInBatch(List<EmployeeDTO> employees) throws EmployeeDAOException {
+		int rowsAdded = 0;
 		
-		try(Connection conn = DatabaseConnectionUtil.getConnection();
-				PreparedStatement ps = conn.prepareStatement(SQLConstants.ADD_EMPLOYEE)){
+		try (Connection conn = DatabaseConnectionUtil.getConnection();
+				PreparedStatement ps = conn.prepareStatement(SQLConstants.ADD_EMPLOYEE);){
 			
-			ps.setInt(1, employee.getID());
-			ps.setString(2, employee.getFirstName());
-			ps.setString(3, employee.getLastName());
-			ps.setString(4, employee.getEmail());
-			ps.setString(5, employee.getPhone());
-			ps.setString(6, employee.getDepartment());
-			ps.setDouble(7, employee.getSalary());
-			ps.setDate(8, employee.getJoinDate());
+			for(EmployeeDTO employee : employees) {
+				ps.setInt(1, employee.getID());
+		        ps.setString(2, employee.getFirstName());
+		        ps.setString(3, employee.getLastName());
+		        ps.setString(4, employee.getEmail());
+		        ps.setString(5, employee.getPhone());
+		        ps.setString(6, employee.getDepartment());
+		        ps.setDouble(7, employee.getSalary());
+		        ps.setDate(8, employee.getJoinDate());
+		        
+		        ps.addBatch();
+		        rowsAdded++;
+			}
+			ps.executeBatch();
 			
-			ps.executeUpdate();
+			return rowsAdded;
 			
 		} catch(SQLException e) {
 			LOGGER.log(Level.SEVERE, "Error while adding data into database : " + e.getMessage());

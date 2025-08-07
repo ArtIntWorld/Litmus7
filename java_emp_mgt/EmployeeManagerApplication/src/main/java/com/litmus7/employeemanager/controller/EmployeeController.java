@@ -35,13 +35,13 @@ public class EmployeeController {
 	        return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, ResponseConstants.INVALID_CSV_MESSAGE);
 	    }
 	    
-		HashMap<String, Integer> importstatus =null;
+		HashMap<String, Integer> importStatus =null;
 		
 		try {
-			importstatus = employeeService.importEmployeeToDB(filePath);
+			importStatus = employeeService.importEmployeeToDB(filePath);
 	
-			int totalEmployeeData = importstatus.get("totalData");
-			int successEmployeeEntries = importstatus.get("successData");
+			int totalEmployeeData = importStatus.get("totalData");
+			int successEmployeeEntries = importStatus.get("successData");
 				
 			if (totalEmployeeData == 0) {
 				return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, ResponseConstants.ERROR_CSV_MESSAGE);
@@ -50,7 +50,7 @@ public class EmployeeController {
 			} else if(successEmployeeEntries < totalEmployeeData) {
 				return new ResponseDTO<>(ResponseConstants.PARTIAL_VALID_ERROR, ResponseConstants.PARTIAL_VALID_ERROR_MESSAGE, successEmployeeEntries);
 			} else {
-				return new ResponseDTO<>(ResponseConstants.PARTIAL_VALID_ERROR, ResponseConstants.PARTIAL_VALID_ERROR_MESSAGE, successEmployeeEntries);
+				return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.EXPORT_SUCCESS_MESSSAGE, successEmployeeEntries);
 			}
 			
 		} catch(EmployeeServiceException e) {
@@ -93,12 +93,34 @@ public class EmployeeController {
 	
 	public ResponseDTO<Void> addNewEmployee(String[] employee){
 		try {
-			
 			employeeService.addEmployee(employee);
 			return new ResponseDTO<>(ResponseConstants.OK,ResponseConstants.ADD_SUCCESS_MESSAGE);
-			
 		} catch(EmployeeServiceException e) {
 			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
 		}
+	}
+	
+	public ResponseDTO<Integer> addEmployeeInBatch(List<String[]> employees){
+		
+		HashMap<String, Integer> addStatus =null;
+		
+		try {
+			addStatus = employeeService.addEmployeeInBatch(employees);
+	
+			int totalEmployeeData = addStatus.get("totalData");
+			int successEmployeeEntries = addStatus.get("successData");
+				
+			if(successEmployeeEntries == 0) {
+				return new ResponseDTO<>(ResponseConstants.FULL_VALID_ERROR, ResponseConstants.FULL_VALID_ERROR_MESSAGE);
+			} else if(successEmployeeEntries < totalEmployeeData) {
+				return new ResponseDTO<>(ResponseConstants.PARTIAL_VALID_ERROR, ResponseConstants.PARTIAL_VALID_ERROR_MESSAGE, successEmployeeEntries);
+			} else {
+				return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.EXPORT_SUCCESS_MESSSAGE, successEmployeeEntries);
+			}
+			
+		} catch(EmployeeServiceException e) {
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, e.getMessage());
+		}
+		
 	}
 }

@@ -1,6 +1,7 @@
 package com.litmus7.employeemanager.ui;
 
 import java.sql.Date;
+import java.util.Arrays;
 import java.util.List;
 
 import com.litmus7.employeemanager.controller.EmployeeController;
@@ -110,6 +111,58 @@ public class Client {
 		
 		System.out.println("Update Status : " + addEmployeeResponse.getStatus());
 		System.out.println("Message : " + addEmployeeResponse.getMessage());
+		
+		System.out.println("---------------------------------------------------------------------------------------------------------------");
+		
+		List<String[]> addInputEmployees = Arrays.asList(
+				new String[]{"13", "Anjali", "Menon", "anjali.menon@gmail.com", "9876543210", "Finance", "25000.0", "15-05-2020"},
+			    new String[]{"14", "Rahul", "Nair", "rahul.nair@gmail.com", "9123456780", "HR", "22000.0", "01-03-2019"},
+			    new String[]{"15", "Divya", "Krishnan", "divya.k@gmail.com", "9988776655", "IT", "28000.0", "20-07-2021"},
+			    new String[]{"16", "Arjun", "Ravi", "arjun.ravi@gmail.com", "9876512340", "Marketing", "24000.0", "10-10-2022"},
+			    new String[]{"17", "Meera", "Suresh", "meera.suresh@gmail.com", "9567890345", "Sales", "23000.0", "05-02-2018"},
+				
+			    // Valid row for reference
+			    new String[]{"21", "Nisha", "George", "nisha.george@gmail.com", "9845012345", "Logistics", "26000.0", "12-09-2019"},
+
+			    // Duplicate ID (21 repeated)
+			    new String[]{"21", "Kiran", "Joseph", "kiran.joseph@gmail.com", "9999999999", "Admin", "24000.0", "11-11-2020"},
+
+			    // Missing department and salary
+			    new String[]{"22", "Sneha", "Das", "sneha.das@gmail.com", "9887766554", "", "", "18-06-2022"},
+
+			    // Invalid email (no domain)
+			    new String[]{"23", "Vimal", "Shaji", "vimal.shaji@", "9801234567", "Tech", "27000.0", "01-01-2023"},
+
+			    // Invalid phone number (too short)
+			    new String[]{"24", "Arya", "Nandan", "arya.nandan@gmail.com", "12345", "Design", "21000.0", "10-10-2020"},
+
+			    // Invalid salary (contains symbols)
+			    new String[]{"25", "Harish", "P", "harish.p@gmail.com", "9876541230", "Support", "$30000", "05-07-2018"},
+
+			    // Invalid date (non-date string)
+			    new String[]{"26", "Gita", "Ravi", "gita.ravi@gmail.com", "9765432198", "Operations", "28000.0", "soon"},
+
+			    // Too few columns (missing join date)
+			    new String[]{"27", "Ajay", "M", "ajay.m@gmail.com", "9000000000", "IT", "27000.0"}
+			);
+
+
+		
+		ResponseDTO<Integer> addResponse = request.addEmployeeInBatch(addInputEmployees);
+		
+		if(addResponse.getStatus() == 200) {
+			System.out.println("Export Message : " + addResponse.getMessage());
+		}
+		else if(addResponse.getStatus() == 206) {
+			System.out.println("Export Status : " + addResponse.getStatus());
+			System.out.println("Message : " + addResponse.getMessage());
+			System.out.println("Successful Entries : " + addResponse.getData());
+		}
+		else {
+			System.out.println("Export Status : " + addResponse.getStatus());
+			System.out.println("Message : " + addResponse.getMessage());
+		}
+		
 	}
 
 }

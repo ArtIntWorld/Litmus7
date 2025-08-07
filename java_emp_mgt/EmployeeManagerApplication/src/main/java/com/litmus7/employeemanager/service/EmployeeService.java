@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.FileHandler;
@@ -55,7 +56,7 @@ public class EmployeeService {
 			return employeesList;
 			
 		} catch(EmployeeDAOException e) {
-			LOGGER.log(Level.SEVERE, "Error while exporting data : " + e.getMessage());
+			LOGGER.severe("Error while exporting data : " + e.getMessage());
 			throw new EmployeeServiceException(e.getMessage(), e);
 		}
 		
@@ -94,8 +95,8 @@ public class EmployeeService {
 		
 		try {
 			rawEmployees = CSVUtil.readCSV(filepath);
-		} catch(Exception e) {
-			LOGGER.log(Level.SEVERE, "Failed to read CSV file : " + e);
+		} catch(IOException e) {
+			LOGGER.severe("Failed to read CSV file : " + e.getMessage());
 			throw new EmployeeServiceException(e.getMessage(), e);
 		}
 		
@@ -133,7 +134,7 @@ public class EmployeeService {
 			return result;
 			
 		} catch(Exception e) {
-			LOGGER.log(Level.SEVERE, "Row " + dataIndex + " : Something went wrong : " + e.getMessage());
+			LOGGER.severe("Row " + dataIndex + " : Something went wrong : " + e.getMessage());
 			throw new EmployeeServiceException(e.getMessage(), e);
 		} 
 	}
@@ -149,7 +150,7 @@ public class EmployeeService {
 			}
 			
 		}catch(EmployeeDAOException e) {
-			LOGGER.log(Level.SEVERE, "Error while removing employee with ID " + id + " : " + e.getMessage());
+			LOGGER.severe("Error while removing employee with ID " + id + " : " + e.getMessage());
 			throw new EmployeeServiceException(e.getMessage(), e);
 		}
 		
@@ -178,7 +179,7 @@ public class EmployeeService {
 			}
 			
 		} catch (EmployeeDAOException e) {
-			LOGGER.log(Level.SEVERE, "Error while updating employee with ID " + rawEmployee[0] + " : " + e.getMessage());
+			LOGGER.severe("Error while updating employee with ID " + rawEmployee[0] + " : " + e.getMessage());
 			throw new EmployeeServiceException(e.getMessage(), e);
 		}
 	}
@@ -196,7 +197,7 @@ public class EmployeeService {
 			return employee;
 			
 		}catch(EmployeeDAOException e) {
-			LOGGER.log(Level.SEVERE, "Error while retrieving employee : " + e.getMessage());
+			LOGGER.severe("Error while retrieving employee : " + e.getMessage());
 			throw new EmployeeServiceException(e.getMessage(), e);
 		}
 	}
@@ -222,10 +223,63 @@ public class EmployeeService {
 			
 			EmployeeDTO employee = convertToEmployeeObject(rawEmployee);
 			
-			employeeDao.addEmployee(employee);
+			employeeDao.saveEmployee(employee);
 			
 		} catch (EmployeeDAOException e) {
-			LOGGER.log(Level.SEVERE, "Error while updating employee with ID " + rawEmployee[0] + " : " + e.getMessage());
+			LOGGER.severe("Error while updating employee with ID " + rawEmployee[0] + " : " + e.getMessage());
+			throw new EmployeeServiceException(e.getMessage(), e);
+		}
+	}
+	
+	public HashMap<String, Integer> addEmployeeInBatch(List<String[]> rawEmployees) throws EmployeeServiceException {
+		
+		List<String> ids = new ArrayList<>();
+		HashMap<String, Integer> result = new HashMap<>();
+		List<EmployeeDTO> employees = null;
+		int totalData = rawEmployees.size();
+		int successData = 0;
+		
+		result.put("successData", 0);
+		result.put("totalData", 0);
+	
+		try {
+			
+			employees = new ArrayList<>();
+			
+			for(String[] rawEmployee : rawEmployees) {
+				if(rawEmployee.length != 8) {
+					LOGGER.warning("Employee with ID " + rawEmployee[0] + " has insufficient data found.");
+					continue;
+				}
+				
+				if(! ValidationsUtil.validateEmployee(rawEmployee)) {
+					LOGGER.warning("Employee with ID " + rawEmployee[0] + " has failed validation.");
+					continue;
+				}
+				
+				if(employeeDao.getEmployeeByID(Integer.parseInt(rawEmployee[0])) != null) {
+					LOGGER.warning("Employee with ID " + rawEmployee[0] + " already exists in the table.");
+					continue;
+				}
+				
+				if(ids.contains(rawEmployee[0])) {
+					LOGGER.warning("Employee with ID " + rawEmployee[0] + " has occured twice in the input data.");
+					continue;
+				}
+				
+				ids.add(rawEmployee[0]);
+				employees.add(convertToEmployeeObject(rawEmployee));
+			}
+			
+			successData = employeeDao.addEmployeesInBatch(employees);
+			
+			result.put("successData", successData);
+			result.put("totalData", totalData);
+			
+			return result;
+			
+		} catch (EmployeeDAOException e) {
+			LOGGER.severe("Error while adding employee in batch : " + e.getMessage());
 			throw new EmployeeServiceException(e.getMessage(), e);
 		}
 	}
