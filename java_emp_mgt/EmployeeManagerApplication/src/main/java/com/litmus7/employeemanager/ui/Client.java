@@ -13,7 +13,7 @@ public class Client {
 	public static void main(String[] args) {
 		EmployeeController request = new EmployeeController();
 		
-		String filepath = "D:\\Litmus7\\java_emp_mgt\\EmployeeManagerApplication\\resource\\employee1.csv";
+		String filepath = "data/employee1.csv";
 		ResponseDTO<Integer> exportResponse = request.writeEmployeeToDB(filepath);
 		
 		if(exportResponse.getStatus() == 200) {
