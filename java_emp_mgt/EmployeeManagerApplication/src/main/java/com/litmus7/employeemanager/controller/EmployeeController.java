@@ -8,12 +8,14 @@ import com.litmus7.employeemanager.dto.EmployeeDTO;
 import com.litmus7.employeemanager.dto.ResponseDTO;
 import com.litmus7.employeemanager.exception.EmployeeServiceException;
 import com.litmus7.employeemanager.service.EmployeeService;
+import com.litmus7.employeemanager.util.ErrorMessageLoader;
 
 public class EmployeeController {
 	
-	EmployeeService employeeService = new EmployeeService();
+	EmployeeService employeeService = new EmployeeService();	
 	
 	public ResponseDTO<List<EmployeeDTO>> getAllEmployees(){
+		
 		List<EmployeeDTO> employees = null;
 		
 		try {
@@ -21,7 +23,7 @@ public class EmployeeController {
 			return new ResponseDTO<>(ResponseConstants.OK, ResponseConstants.IMPORT_SUCCESS_MESSAGE, employees);
 				
 		} catch(EmployeeServiceException e) {
-			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, e.getMessage());
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, ErrorMessageLoader.getMessage(String.valueOf(e.getErrorCode())));
 		}
 	}
 	
@@ -54,7 +56,7 @@ public class EmployeeController {
 			}
 			
 		} catch(EmployeeServiceException e) {
-			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,ErrorMessageLoader.getMessage(String.valueOf(e.getErrorCode()), filePath));
 		}
 	}
 	
@@ -66,7 +68,7 @@ public class EmployeeController {
 			return new ResponseDTO<>(ResponseConstants.OK,ResponseConstants.REMOVE_SUCCESS_MESSAGE);
 			
 		}catch(EmployeeServiceException e) {
-			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,ErrorMessageLoader.getMessage(String.valueOf(e.getErrorCode()), id));
 		}
 		
 	}
@@ -78,7 +80,7 @@ public class EmployeeController {
 			return new ResponseDTO<>(ResponseConstants.OK,ResponseConstants.UPDATE_SUCCESS_MESSAGE);
 			
 		} catch(EmployeeServiceException e) {
-			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,ErrorMessageLoader.getMessage(String.valueOf(e.getErrorCode()), employee[0]));
 		}
 	}
 	
@@ -87,7 +89,7 @@ public class EmployeeController {
 			EmployeeDTO employee = employeeService.getEmployeeByID(id);
 			return new ResponseDTO<>(ResponseConstants.OK,ResponseConstants.UPDATE_SUCCESS_MESSAGE, employee);
 		} catch(EmployeeServiceException e) {
-			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,ErrorMessageLoader.getMessage(String.valueOf(e.getErrorCode()), id));
 		}
 	}
 	
@@ -96,7 +98,7 @@ public class EmployeeController {
 			employeeService.addEmployee(employee);
 			return new ResponseDTO<>(ResponseConstants.OK,ResponseConstants.ADD_SUCCESS_MESSAGE);
 		} catch(EmployeeServiceException e) {
-			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,e.getMessage());
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST,ErrorMessageLoader.getMessage(String.valueOf(e.getErrorCode())));
 		}
 	}
 	
@@ -119,7 +121,7 @@ public class EmployeeController {
 			}
 			
 		} catch(EmployeeServiceException e) {
-			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, e.getMessage());
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, ErrorMessageLoader.getMessage(String.valueOf(e.getErrorCode())));
 		}
 		
 	}
@@ -141,7 +143,7 @@ public class EmployeeController {
 			}
 			
 		} catch (EmployeeServiceException e) {
-			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, e.getMessage());
+			return new ResponseDTO<>(ResponseConstants.BAD_REQUEST, ErrorMessageLoader.getMessage(String.valueOf(e.getErrorCode())));
 		}
 		
 	}

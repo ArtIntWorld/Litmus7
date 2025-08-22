@@ -9,12 +9,12 @@ public class RetailStoreApp {
 	
 	public static void main(String[] args) {
 		
-		Response inputProductResponse = request.exportProductDetails(null, null);
+		Response inputProductResponse = request.importProductDetails(null);
 		
-		Response allProductsResponse = request.importAllProductsDetails();
+		Response allProductsResponse = request.exportAllProductsDetails();
 		
-		Response categoryProductsResponse = request.importAllProductsDetailsByCategory(null);
+		Response categoryProductsResponse = request.exportAllProductsDetailsByCategory(null);
 		
-		Response sortProductResponse = request.importSortedProductsDetails(null);
+		Response sortProductResponse = request.exportSortedProductsDetails(null);
 	}
 }

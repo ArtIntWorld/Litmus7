@@ -7,6 +7,7 @@ public class ResponseConstants {
     public static final int PARTIAL_ERROR = 206;
     public static final int FULL_ERROR = 422;
     public static final int NO_CONTENT = 204;
+    public static final int DATABASE_CONNECTION_ERROR = 503;
     
     public static final String EXPORT_SUCCESS_MESSSAGE = "Employee data exported successfully.";
     public static final String IMPORT_SUCCESS_MESSAGE = "Employees imported successfully.";
@@ -22,4 +23,5 @@ public class ResponseConstants {
 	public static final String NO_TRANSFER_MESSAGE = "No employees where transferred to the department.";
 	public static final String PARTIAL_TRANSFER_MESSAGE = "Some employees where transferred to the department.";
 	public static final String TRANSFER_MESSAGE = "All employees where transferred to the department.";
+	public static final String DATABASE_CONNECTION_ERROR_MESSAGE = "Failed to connect to the database. Please try again later.";
 }

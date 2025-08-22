@@ -42,7 +42,7 @@ public class EmployeeService {
 			
 		} catch(EmployeeDAOException e) {
 			logger.error("Error in exportEmployeeDetails() : {}.", e.getMessage());
-			throw new EmployeeServiceException(e.getMessage(), e);
+			throw new EmployeeServiceException(e.getErrorCode(), e);
 		}
 		
 	}
@@ -90,10 +90,9 @@ public class EmployeeService {
 			rawEmployees = CSVUtil.readCSV(filepath);
 		} catch(IOException e) {
 			logger.error("Error while reading the file : {}.", e.getMessage());
-			throw new EmployeeServiceException(e.getMessage(), e);
+			throw new EmployeeServiceException(121, e);
 		}
 		
-		logger.debug("");
 		result.put("totalData", rawEmployees.size());
 		
 		try {
@@ -127,9 +126,9 @@ public class EmployeeService {
 			
 			return result;
 			
-		} catch(Exception e) {
+		} catch(EmployeeDAOException e) {
 			logger.error("Error in importEmployeeToDB() : {}", e.getMessage());
-			throw new EmployeeServiceException(e.getMessage(), e);
+			throw new EmployeeServiceException(e.getErrorCode(), e);
 		} 
 	}
 	
@@ -143,14 +142,14 @@ public class EmployeeService {
 			
 			if(deleteStatus == 0) {
 				logger.error("No employee was found with the ID " + id);
-				throw new EmployeeServiceException("No employee was found with the ID " + id);
+				throw new EmployeeServiceException(106);
 			}
 			
 			logger.trace("Exiting removeEmployee() with {} employee deleted.", deleteStatus);
 			
-		}catch(EmployeeDAOException e) {
+		} catch(EmployeeDAOException e) {
 			logger.error("Error in removeEmployee() : {}.", e.getMessage());
-			throw new EmployeeServiceException(e.getMessage(), e);
+			throw new EmployeeServiceException(e.getErrorCode(), e);
 		}
 		
 	}
@@ -162,12 +161,12 @@ public class EmployeeService {
 		
 		if(rawEmployee.length != 8) {
 			logger.error("Given employee doesn't contain enough data.");
-			throw new EmployeeServiceException("Given employee doesn't contain enough data.");
+			throw new EmployeeServiceException(100);
 		}
 		
 		if(! ValidationsUtil.validateEmployee(rawEmployee)) {
 			logger.error("Given employee contains some validation mistake.");
-			throw new EmployeeServiceException("Given employee contains some validation mistake.");
+			throw new EmployeeServiceException(101);
 		}
 		
 		EmployeeDTO employee = convertToEmployeeObject(rawEmployee);
@@ -177,14 +176,14 @@ public class EmployeeService {
 			
 			if(updateStatus == 0) {
 				logger.error("No employee was found with the ID " + employee.getID());
-				throw new EmployeeServiceException("No employee was found with the ID " + employee.getID());
+				throw new EmployeeServiceException(106);
 			}
 			
 			logger.trace("Exiting updateEmployee() after successful update.");
 			
 		} catch (EmployeeDAOException e) {
 			logger.error("Error in updateEmployee() : {}.", e.getMessage());
-			throw new EmployeeServiceException(e.getMessage(), e);
+			throw new EmployeeServiceException(e.getErrorCode(), e);
 		}
 	}
 	
@@ -197,7 +196,7 @@ public class EmployeeService {
 			
 			if(employee == null) {
 				logger.error("No employee with the ID " + id + ".");
-				throw new EmployeeServiceException("No employee with the ID " + id + ".");
+				throw new EmployeeServiceException(106);
 			}
 			
 			logger.debug("Retrieved details of employee of id {} : first name: {}, last name: {}, email: {}, phone: {}, department: {}, salary: {}, join date: {}.", id, employee.getFirstName(), employee.getLastName(), employee.getEmail(), employee.getPhone(), employee.getDepartment(), employee.getSalary(), employee.getJoinDate());
@@ -207,7 +206,7 @@ public class EmployeeService {
 			
 		}catch(EmployeeDAOException e) {
 			logger.error("Error in getEmployeeByID() : {}.", e.getMessage());
-			throw new EmployeeServiceException(e.getMessage(), e);
+			throw new EmployeeServiceException(e.getErrorCode(), e);
 		}
 	}
 	
@@ -220,17 +219,17 @@ public class EmployeeService {
 			
 			if(rawEmployee.length != 8) {
 				logger.error("Given employee doesn't contain enough data.");
-				throw new EmployeeServiceException("Given employee doesn't contain enough data.");
+				throw new EmployeeServiceException(100);
 			}
 			
 			if(! ValidationsUtil.validateEmployee(rawEmployee)) {
 				logger.error("Given employee contains some validation mistake.");
-				throw new EmployeeServiceException("Given employee contains some validation mistake.");
+				throw new EmployeeServiceException(101);
 			}
 			
 			if(employeeDao.getEmployeeByID(Integer.parseInt(rawEmployee[0])) != null) {
 				logger.error("The employee already exists with the id {}.", rawEmployee[0]);
-				throw new EmployeeServiceException("The employee already exists with the id "+ rawEmployee[0]);
+				throw new EmployeeServiceException(110);
 			}
 			
 			EmployeeDTO employee = convertToEmployeeObject(rawEmployee);
@@ -240,7 +239,8 @@ public class EmployeeService {
 			logger.trace("Exiting addEmployee() after successful save.");
 			
 		} catch (EmployeeDAOException e) {
-			throw new EmployeeServiceException(e.getMessage(), e);
+			logger.error("Error in saveEmployee() : {}.", e.getMessage());
+			throw new EmployeeServiceException(e.getErrorCode(), e);
 		}
 	}
 	
@@ -298,7 +298,7 @@ public class EmployeeService {
 			
 		} catch (EmployeeDAOException e) {
 			logger.error("Error in addEmployeeInBatch() : {}.", e.getMessage());
-			throw new EmployeeServiceException(e.getMessage(), e);
+			throw new EmployeeServiceException(e.getErrorCode(), e);
 		}
 	}
 	
@@ -310,11 +310,11 @@ public class EmployeeService {
 		
 		if(employeeIds.isEmpty() || employeeIds == null) {
 			logger.error("The given list doesnt contain any values.");
-			throw new EmployeeServiceException("The given list doesnt contain any values.");
+			throw new EmployeeServiceException(100);
 		}
 		if(newDepartment.isBlank() || newDepartment == null) {
 			logger.error("There is no department specified for the transfering.");
-			throw new EmployeeServiceException("There is no department specified for the transfering.");
+			throw new EmployeeServiceException(100);
 		}
 		
 		int totalIds = employeeIds.size();
@@ -331,7 +331,7 @@ public class EmployeeService {
 			
 		} catch (EmployeeDAOException e) {
 			logger.error("Error in transferEmployeesToDepartment() : {}", e.getMessage());
-			throw new EmployeeServiceException(e.getMessage(), e);
+			throw new EmployeeServiceException(e.getErrorCode(), e);
 		}
 	}
 }

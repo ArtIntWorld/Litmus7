@@ -48,7 +48,7 @@ public class EmployeeDAO {
 				
 			} catch(SQLException e){
 				logger.error("Error while executing query for id {} : {}", id, e.getMessage());
-				throw new EmployeeDAOException(e.getMessage(), e);
+				throw new EmployeeDAOException(109, e);
 			}
 			
 			logger.trace("Exiting getEmployeeByID() with result {}.", employee);
@@ -56,7 +56,7 @@ public class EmployeeDAO {
 			
 		} catch(SQLException e){
 			logger.error("Error in either database connection or statement preparation : {}.", e.getMessage());
-			throw new EmployeeDAOException(e.getMessage(), e);
+			throw new EmployeeDAOException(118, e);
 		}
 		
 	}
@@ -91,7 +91,7 @@ public class EmployeeDAO {
 				
 			} catch(SQLException e) {
 				logger.error("Error while executing query: {}.", e.getMessage());
-				throw new EmployeeDAOException(e.getMessage(), e);
+				throw new EmployeeDAOException(109, e);
 			}
 			
 			logger.trace("Exiting getEmployees() with {} employees retrieved.", employees.size());
@@ -99,7 +99,7 @@ public class EmployeeDAO {
 			
 		} catch(SQLException e) {
 			logger.error("Error in either database connection or statement preparation : {}.", e.getMessage());
-			throw new EmployeeDAOException(e.getMessage(), e);
+			throw new EmployeeDAOException(118, e);
 		}
 	}
 	
@@ -140,7 +140,7 @@ public class EmployeeDAO {
 
 		} catch(SQLException e) {
 			logger.error("Error in either database connection or statement preparation : {}.", e.getMessage());
-			throw new EmployeeDAOException(e.getMessage(), e);
+			throw new EmployeeDAOException(118, e);
 		}
 	}
 	
@@ -160,7 +160,7 @@ public class EmployeeDAO {
 			
 		}catch(SQLException e) {
 			logger.error("Error in either database connection or statement preparation : {}.", e.getMessage());
-			throw new EmployeeDAOException(e.getMessage(), e);
+			throw new EmployeeDAOException(118, e);
 		}
 	}
 	
@@ -191,7 +191,7 @@ public class EmployeeDAO {
 			
 		}catch(SQLException e) {
 			logger.error("Error in either database connection or statement preparation : {}.", e.getMessage());
-			throw new EmployeeDAOException(e.getMessage(), e);
+			throw new EmployeeDAOException(118, e);
 		}
 	}
 	
@@ -228,7 +228,7 @@ public class EmployeeDAO {
 			
 		} catch(SQLException e) {
 			logger.error("Error in either database connection or statement preparation : {}.", e.getMessage());
-			throw new EmployeeDAOException(e.getMessage(), e);
+			throw new EmployeeDAOException(118, e);
 		}
 	}
 	
@@ -269,7 +269,7 @@ public class EmployeeDAO {
 				
 				conn.rollback();
 				logger.error("Error in statement preparation : {}.", e.getMessage());
-				throw new EmployeeDAOException(e.getMessage(), e);
+				throw new EmployeeDAOException(118, e);
 				
 			} finally {
 				conn.setAutoCommit(true);
@@ -277,7 +277,7 @@ public class EmployeeDAO {
 			
 		} catch(SQLException e) {
 			logger.error("Error in either database connection : {}.", e.getMessage());
-			throw new EmployeeDAOException(e.getMessage(), e);
+			throw new EmployeeDAOException(118, e);
 		}
 	}
 	
