@@ -1,0 +1,5 @@
+interface PaymentMethod {
+
+    void pay();
+
+}
