@@ -32,7 +32,6 @@ public class InventoryService {
 	public List<Inventory> convertAllToInventory(List<String[]> rawInventories){
 		
 		List<Inventory> inventories = new ArrayList<>();
-		
 		for(String[] rawInventory : rawInventories) {
 			inventories.add(convertToInventory(rawInventory));
 		}
@@ -41,18 +40,17 @@ public class InventoryService {
 		
 	}
 	
-	public HashMap<String, Integer> addInventoryToDB(String folderPath, String processedPath, String errorPath) throws InventoryException{
+	public HashMap<String, Integer> addInventoryToDB(List<String> csvPaths, String processedPath, String errorPath) throws InventoryException{
 		
 		boolean insertStatus;
 		Integer errorCount = 0;
 		Integer successCount = 0;
 		List<String[]> rawInventories = new ArrayList<>();
 		List<Inventory> inventories = new ArrayList<>();
-		List<String> csvPaths = FileUtil.getAllCSVFiles(folderPath);
 		HashMap<String, Integer> result = new HashMap<>();
 		
 		logger.info("Beginning addInventoryToDB()");
-		logger.debug("Found {} csv files from the folder [{}].", csvPaths.size(), folderPath);
+		logger.debug("Processing {} csv files from the [input] folder.", csvPaths.size());
 		
 		try{
 			

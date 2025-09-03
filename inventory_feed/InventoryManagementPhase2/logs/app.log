@@ -1,0 +1,575 @@
+2025-09-03 14:01:47 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [null].
+2025-09-03 14:04:37 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [null].
+2025-09-03 14:05:24 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [null].
+2025-09-03 14:07:55 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [null].
+2025-09-03 14:07:55 [main] ERROR com.litmus7.inventorymanagementphase2.util.FileUtil - The folder path is empty
+2025-09-03 14:07:55 [main] ERROR com.litmus7.inventorymanagementphase2.controller.InventoryController - Error occured while extracting csv paths : null
+2025-09-03 14:09:38 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [null].
+2025-09-03 14:09:38 [main] ERROR com.litmus7.inventorymanagementphase2.util.FileUtil - The folder path is empty
+2025-09-03 14:09:38 [main] ERROR com.litmus7.inventorymanagementphase2.controller.InventoryController - Error occured while extracting csv paths : Folder path is null.
+2025-09-03 14:11:20 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [D:/Litmus7/inventory_feed/InventoryManagementPhase2/input].
+2025-09-03 14:11:20 [main] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Found 4 CSV file(s) in directory [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input].
+2025-09-03 14:11:20 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [1] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv]
+2025-09-03 14:11:20 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [1]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv].
+2025-09-03 14:11:20 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv]
+2025-09-03 14:11:20 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [2] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv]
+2025-09-03 14:11:20 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [2]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv].
+2025-09-03 14:11:20 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv]
+2025-09-03 14:11:20 [FileProcessor - [1]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:11:20 [FileProcessor - [2]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:11:20 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [3] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv]
+2025-09-03 14:11:20 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [3]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv].
+2025-09-03 14:11:20 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv]
+2025-09-03 14:11:20 [FileProcessor - [3]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:11:20 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [4] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv]
+2025-09-03 14:11:20 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:11:20 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [4]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv].
+2025-09-03 14:11:20 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:11:20 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:11:20 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv]
+2025-09-03 14:11:20 [FileProcessor - [2]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:11:20 [FileProcessor - [3]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:11:20 [FileProcessor - [1]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:11:20 [FileProcessor - [4]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:11:20 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:11:20 [FileProcessor - [4]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:11:20 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:11:20 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:11:20 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:11:20 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:11:20 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:11:20 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:11:20 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:11:20 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:11:21 [FileProcessor - [1]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record : Duplicate entry '103' for key 'inventory.PRIMARY'
+java.sql.BatchUpdateException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:11:21 [FileProcessor - [4]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record : Check constraint 'inventory_chk_2' is violated.
+java.sql.BatchUpdateException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:11:21 [FileProcessor - [3]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record : Check constraint 'inventory_chk_1' is violated.
+java.sql.BatchUpdateException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:11:21 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:11:21 [FileProcessor - [2]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record : Duplicate entry '203' for key 'inventory.PRIMARY'
+java.sql.BatchUpdateException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:11:21 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:11:21 [FileProcessor - [2]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:11:21 [FileProcessor - [1]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:11:21 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:11:21 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:11:21 [FileProcessor - [4]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Check constraint 'inventory_chk_2' is violated.
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:11:21 [FileProcessor - [3]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Check constraint 'inventory_chk_1' is violated.
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:11:21 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:11:21 [FileProcessor - [2]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv]
+2025-09-03 14:11:21 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:11:21 [FileProcessor - [1]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv]
+2025-09-03 14:11:21 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [1] completed
+2025-09-03 14:11:21 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [2] completed
+2025-09-03 14:11:21 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:11:21 [FileProcessor - [4]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv]
+2025-09-03 14:11:21 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:11:21 [FileProcessor - [3]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv]
+2025-09-03 14:11:21 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [3] completed
+2025-09-03 14:11:21 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [4] completed
+2025-09-03 14:11:21 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Multithreaded processing complete. Success=0, Failed=4
+2025-09-03 14:11:21 [main] ERROR com.litmus7.inventorymanagementphase2.controller.InventoryController - Invalid files being processed.
+2025-09-03 14:13:12 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [D:/Litmus7/inventory_feed/InventoryManagementPhase2/input].
+2025-09-03 14:13:12 [main] WARN  com.litmus7.inventorymanagementphase2.util.FileUtil - No CSV files found in directory [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input].
+2025-09-03 14:13:12 [main] ERROR com.litmus7.inventorymanagementphase2.controller.InventoryController - Error occured while extracting csv paths : No CSV files found in the given directory.
+2025-09-03 14:13:46 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [D:/Litmus7/inventory_feed/InventoryManagementPhase2/input].
+2025-09-03 14:13:46 [main] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Found 4 CSV file(s) in directory [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input].
+2025-09-03 14:13:46 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [1] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv]
+2025-09-03 14:13:46 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [1]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv].
+2025-09-03 14:13:46 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv]
+2025-09-03 14:13:46 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [2] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv]
+2025-09-03 14:13:46 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [2]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv].
+2025-09-03 14:13:46 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv]
+2025-09-03 14:13:46 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [3] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv]
+2025-09-03 14:13:46 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [3]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv].
+2025-09-03 14:13:46 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv]
+2025-09-03 14:13:46 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [4] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv]
+2025-09-03 14:13:46 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [4]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv].
+2025-09-03 14:13:46 [FileProcessor - [3]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:13:46 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv]
+2025-09-03 14:13:46 [FileProcessor - [4]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:13:46 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:13:46 [FileProcessor - [3]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:13:46 [FileProcessor - [2]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:13:46 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:13:46 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:13:46 [FileProcessor - [1]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:13:46 [FileProcessor - [2]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:13:46 [FileProcessor - [4]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:13:46 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:13:46 [FileProcessor - [1]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:13:47 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:13:47 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:13:47 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:13:47 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:13:47 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:13:47 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:13:47 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:13:47 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:13:47 [FileProcessor - [3]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record.
+java.sql.BatchUpdateException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:13:47 [FileProcessor - [1]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record.
+java.sql.BatchUpdateException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:13:47 [FileProcessor - [4]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record.
+java.sql.BatchUpdateException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:13:47 [FileProcessor - [2]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record.
+java.sql.BatchUpdateException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:13:47 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:13:47 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:13:47 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:13:47 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:13:47 [FileProcessor - [4]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Check constraint 'inventory_chk_2' is violated.
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:13:47 [FileProcessor - [1]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '103' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:13:47 [FileProcessor - [3]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Check constraint 'inventory_chk_1' is violated.
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:13:47 [FileProcessor - [2]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '203' for key 'inventory.PRIMARY'
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:13:47 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:13:47 [FileProcessor - [4]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv]
+2025-09-03 14:13:47 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:13:47 [FileProcessor - [3]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv]
+2025-09-03 14:13:47 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:13:47 [FileProcessor - [1]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv]
+2025-09-03 14:13:47 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [1] completed
+2025-09-03 14:13:47 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:13:47 [FileProcessor - [2]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv]
+2025-09-03 14:13:47 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [2] completed
+2025-09-03 14:13:47 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [3] completed
+2025-09-03 14:13:47 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [4] completed
+2025-09-03 14:13:47 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Multithreaded processing complete. Success=0, Failed=4
+2025-09-03 14:13:47 [main] ERROR com.litmus7.inventorymanagementphase2.controller.InventoryController - Invalid files being processed.
+2025-09-03 14:16:10 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [D:/Litmus7/inventory_feed/InventoryManagementPhase2/input].
+2025-09-03 14:16:10 [main] WARN  com.litmus7.inventorymanagementphase2.util.FileUtil - No CSV files found in directory [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input].
+2025-09-03 14:16:10 [main] ERROR com.litmus7.inventorymanagementphase2.controller.InventoryController - Error occured while extracting csv paths : No CSV files found in the given directory.
+2025-09-03 14:16:28 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Beginning insertCSVToDB() wth folder path [D:/Litmus7/inventory_feed/InventoryManagementPhase2/input].
+2025-09-03 14:16:28 [main] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Found 4 CSV file(s) in directory [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input].
+2025-09-03 14:16:28 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [1] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv]
+2025-09-03 14:16:28 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [1]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv].
+2025-09-03 14:16:28 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv]
+2025-09-03 14:16:28 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [2] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv]
+2025-09-03 14:16:28 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [2]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv].
+2025-09-03 14:16:28 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv]
+2025-09-03 14:16:28 [FileProcessor - [1]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:16:28 [FileProcessor - [2]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:16:28 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [3] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv]
+2025-09-03 14:16:28 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:16:28 [FileProcessor - [2]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:16:28 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:16:28 [FileProcessor - [1]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:16:28 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [3]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv].
+2025-09-03 14:16:28 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv]
+2025-09-03 14:16:28 [FileProcessor - [3]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:16:28 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:16:28 [FileProcessor - [3]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:16:28 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Started thread FileProcessor - [4] for file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv]
+2025-09-03 14:16:28 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - [FileProcessor - [4]] is handling file in path [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv].
+2025-09-03 14:16:28 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Beginning addInventoryToDB() from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv]
+2025-09-03 14:16:28 [FileProcessor - [4]] DEBUG com.litmus7.inventorymanagementphase2.service.InventoryService - Succsssfully extracted 3 records drom the file.
+2025-09-03 14:16:28 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Converted product records into object structure.
+2025-09-03 14:16:28 [FileProcessor - [4]] DEBUG com.litmus7.inventorymanagementphase2.dao.InventoryDao - Beginning insertInventory() with 3 records.
+2025-09-03 14:16:29 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:16:29 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:16:29 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:16:29 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Connection established succesfully.
+2025-09-03 14:16:29 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:16:29 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:16:29 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:16:29 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Statement prepared for execution.
+2025-09-03 14:16:29 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Successfully inserted 3 records.
+2025-09-03 14:16:29 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction committed after successful insertion of records.
+2025-09-03 14:16:29 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Successfully inserted 3 records.
+2025-09-03 14:16:29 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction committed after successful insertion of records.
+2025-09-03 14:16:29 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Successfully inserted 3 records into the table.
+2025-09-03 14:16:29 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.service.InventoryService - Successfully inserted 3 records into the table.
+2025-09-03 14:16:29 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/processed].
+2025-09-03 14:16:29 [FileProcessor - [1]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Successful entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample1.csv]
+2025-09-03 14:16:29 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [1] completed
+2025-09-03 14:16:29 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/processed].
+2025-09-03 14:16:29 [FileProcessor - [2]] INFO  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Successful entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample2.csv]
+2025-09-03 14:16:29 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [2] completed
+2025-09-03 14:16:29 [FileProcessor - [3]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record.
+java.sql.BatchUpdateException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:16:29 [FileProcessor - [4]] WARN  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Failed insertion due to error in record.
+java.sql.BatchUpdateException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	... 6 more
+2025-09-03 14:16:29 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:16:29 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.dao.InventoryDao - Transaction rollbacked due to error.
+2025-09-03 14:16:29 [FileProcessor - [3]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Check constraint 'inventory_chk_1' is violated.
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_1' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:16:29 [FileProcessor - [4]] ERROR com.litmus7.inventorymanagementphase2.service.InventoryService - Error while inserting the records into table.
+com.litmus7.inventorymanagementphase2.exception.InventoryDaoException: java.sql.BatchUpdateException: Check constraint 'inventory_chk_2' is violated.
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:55) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.service.InventoryService.addInventoryToDB(InventoryService.java:66) ~[bin/:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler.run(InventoryController.java:111) ~[bin/:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: java.sql.BatchUpdateException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createBatchUpdateException(SQLError.java:214) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:885) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+Caused by: java.sql.SQLException: Check constraint 'inventory_chk_2' is violated.
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchSerially(ClientPreparedStatement.java:864) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.ClientPreparedStatement.executeBatchInternal(ClientPreparedStatement.java:466) ~[mysql-connector-j-9.3.0.jar:?]
+	at mysql.connector.j@9.3.0/com.mysql.cj.jdbc.StatementImpl.executeBatch(StatementImpl.java:858) ~[mysql-connector-j-9.3.0.jar:?]
+	at InventoryManagementPhase2/com.litmus7.inventorymanagementphase2.dao.InventoryDao.insertInventory(InventoryDao.java:41) ~[bin/:?]
+	... 3 more
+2025-09-03 14:16:29 [FileProcessor - [3]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:16:29 [FileProcessor - [3]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample3.csv]
+2025-09-03 14:16:29 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [3] completed
+2025-09-03 14:16:29 [FileProcessor - [4]] INFO  com.litmus7.inventorymanagementphase2.util.FileUtil - Moved file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv] to [D:/Litmus7/inventory_feed/InventoryManagementPhase2/error].
+2025-09-03 14:16:29 [FileProcessor - [4]] WARN  com.litmus7.inventorymanagementphase2.controller.ThreadFileHandler - Failed the entry of records in the file from [D:\Litmus7\inventory_feed\InventoryManagementPhase2\input\sample4.csv]
+2025-09-03 14:16:29 [main] DEBUG com.litmus7.inventorymanagementphase2.controller.InventoryController - Thread FileProcessor - [4] completed
+2025-09-03 14:16:29 [main] INFO  com.litmus7.inventorymanagementphase2.controller.InventoryController - Multithreaded processing complete. Success=2, Failed=2
+2025-09-03 14:16:29 [main] WARN  com.litmus7.inventorymanagementphase2.controller.InventoryController - Partial success due to some error files.

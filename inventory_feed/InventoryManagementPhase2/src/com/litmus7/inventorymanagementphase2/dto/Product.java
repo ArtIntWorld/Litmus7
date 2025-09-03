@@ -1,12 +1,11 @@
-package com.litmus7.inventorymanagementsinglethread.dto;
+package com.litmus7.inventorymanagementphase2.dto;
 
-public class Inventory {
-	
+public class Product {
 	private Integer sku, quantity;
 	private String productName;
 	private double price;
 	
-	public Inventory() { }
+	public Product() { }
 	
 	public void setId(Integer sku) { this.sku = sku; }
 	public Integer getId() { return sku; }
@@ -19,5 +18,4 @@ public class Inventory {
 	
 	public void setPrice(double price) { this.price = price; }
 	public double getPrice() { return price; }
-
 }
